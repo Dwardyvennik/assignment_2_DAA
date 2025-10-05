@@ -4,10 +4,6 @@ import metrics.PerformanceTracker;
 
 public class HeapSort {
     private final PerformanceTracker tracker;
-
-    /*
-     * @param tracker object for recording performance data.
-     */
     public HeapSort(PerformanceTracker tracker) {
         this.tracker = tracker;
     }
@@ -42,14 +38,12 @@ public class HeapSort {
                 largest = left;
             }
         }
-
         if (right < n) {
             tracker.incrementComparisons(); // Comparison accounting
             if (arr[right] > arr[largest]) {
                 largest = right;
             }
         }
-
         // if the large element is not the root, swap and continue sifting.
         if (largest != i) {
             swap(arr, i, largest);
@@ -72,3 +66,4 @@ public class HeapSort {
         return true;
     }
 }
+
